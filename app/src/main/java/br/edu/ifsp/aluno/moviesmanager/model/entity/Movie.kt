@@ -6,6 +6,7 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class Movie(
     var id: Int? = -1,
+    var time: Long = INVALID_TIME,
     var name: String = "",
     var releaseYear: Int = 0,
     var producer: String = "",
@@ -13,4 +14,8 @@ data class Movie(
     var isWatched: String = "",
     var review: String = "",
     var genre: String = ""
-): Parcelable
+): Parcelable {
+    companion object {
+        const val INVALID_TIME = -1L
+    }
+}
